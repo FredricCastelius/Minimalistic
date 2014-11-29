@@ -1,5 +1,23 @@
-/* my resets */
+$small: 480px;
+$medium: 768px;
+$large: 769px;
 
+/*============================================================================
+  #Basics / affitional resets to Shopifys Timber
+==============================================================================*/
+
+
+html {
+  font-size: 100%;
+  text-size-adjust: 100%; // prevent iOS text size adjust after orientation change, without disabling user zoom.
+}
+
+body {
+  overflow-y: scroll!important; // Force a vertical scrollbar to prevent a jumpy page
+  overflow-x: hidden; // hide horizontal scroll when wrapping acts weird in IE and FF
+}
+
+// to prevent blurryness on ajax cart
 .ajaxcart__product, .cart__row {
   -webkit-transform: scale(1);
   -moz-transform: scale(1);
@@ -8,62 +26,250 @@
   transform: scale(1);
 }
 
+// remove the admin bar, #remove when live
 #admin_bar_iframe {
   display: none;
 }
 
-/* my style */
+
+
+/*============================================================================
+  #Layout
+==============================================================================*/
 
 body {
-  //background: red;
   * {
     text-transform: uppercase;
+    text-decoration: none;
   }
 }
 
-.header-logo {
-  font-size: 1em;
-}
+/*============================================================================
+  #Header 
+==============================================================================*/
 
-.site-header {
+header[role="banner"] {
+
   background: transparent;
+  z-index: 1;
+  width: 100%;
   //position: absolute;
   //left: 0;
   //top: 0;
+
+  /* logo */
+  .header-logo {
+    font-size: 1em;
+  }
+
+  /* cart */ 
+  #CartToggle {
+
+    float: right;
+    margin-left: 10px;
+
+    /* icon with fallback text */
+    .icon-fallback-text {
+      float: left;
+      font-size: 1em;
+      margin-right: 0.5em;
+    }
+
+    /* the item count */
+    #CartCount {
+      float: left;
+      font-weight: bold;
+    }
+
+    /* under medium */
+    /* cart gose to top right on smaler devices for making space for navigation */
+    
+    @media (max-width: $medium) {
+      position: absolute;
+      top: 12px;
+      right: 10px;
+    }
+
+  }
+
+  /* costumer accounts */
+
+  // text links
+  #account-area-text-links {
+
+    margin-top: 1px; // align with cart icon
+    
+    & + nav[role="navigation"] ul > li:last-child a { // enabeling costumer accounts in the header will push down the main nav, removing padding is needed for vertical alignment
+        padding-right: 0px;
+    }
+
+  }
+
+  // icon
+  #account-area-icon {
+
+    .fa-user {
+      float: right;
+      margin-top: 3px;
+      font-size: 1.1em;
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+
+    @media (max-width: $medium) {
+      position: absolute;
+      margin-top: 0;
+      top: 13px;
+      left: 6px;
+    }
+
+  }
+
+  // main navigation
+  nav[role="navigation"] {
+
+    ul {
+      margin-bottom: 0;
+      //margin-right: 20px;
+      
+      .site-nav > li:first-child a, 
+      .site-nav > li:last-child a, 
+      .site-nav__link {
+        padding: 0 10px;
+        @media (max-width: $medium) { 
+          padding: 0 10px;
+        }
+      }
+      
+      .site-nav--active a {
+        //font-weight: 400;
+      }
+    }
+    * {
+      font-size: 1em;
+      font-weight: 600;
+    }
+  }
+}
+
+/*============================================================================
+  #Footer 
+==============================================================================*/
+
+.site-footer {
+  background-color: #222;
+  border-top: 0;
+  * {
+    color: #fff;
+  }
+}
+
+#newsletter-footer, #social, #payments {
+  max-width: 1180px;
   width: 100%;
+  padding: 0 30px;
+  display: table;
+  margin: auto;
+  p, form {
+    margin-bottom: 0px!important;
+  }
+  .grid__item {
+    display: table-cell;
+    vertical-align: middle;
+    float: none;
+  }
   * {
+    letter-spacing: 0.06em;
   }
 }
 
-.main-nav {
-  float: right;
-  margin-right: 10px;
+#social, #payments {
   ul {
-    margin-bottom: 0;
-    margin-right: 20px;
-  }
-  .site-nav>li:first-child a, .site-nav>li:last-child a, .site-nav__link {
-    padding: 0 20px;
-  }
-  .site-nav--active a {
-    font-weight: 400;
-  }
-  * {
-    font-size: 1em;
-    font-weight: 600;
+    width: 100%;
+    li {
+      float: left;
+      margin: 5px 10px;
+      font-size: 1.5em;
+    }
   }
 }
 
-#CartToggle {
-  float: right;
-  .icon-fallback-text {
-    float: left;
-    font-size: 1em;
-    margin-right: 0.5em;
+#payments {
+  text-align: center;
+  ul {
+    li {
+      float: center;
+    }
   }
-  #CartCount {
-    float: left;
-    font-weight: bold;
+}
+
+.contact-footer p {
+  text-align: right;
+  font-weight: bold;
+}
+
+.payment-wrapper {
+  background: #f2f2f2;
+  width: 100%;
+  float: left;
+}
+
+#payments {
+  p {
+    text-align: center;
+    margin-top: 30px;
+  }
+}
+
+/*============================================================================
+  #Main 
+==============================================================================*/
+
+
+.main-content {
+  margin-top: 0;
+  padding-bottom: 0;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  float: left;
+  overflow: hidden;
+  width: 100%;
+  background: #3085a3;
+  text-align: center;
+  cursor: pointer;
+  z-index: 0;
+  * {
+    color: #fff;
+  }
+  img {
+    position: relative;
+    display: block;
+    width: 100%;
+  }
+  figcaption::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  figcaption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;  
+  }
+  h1 {
+    position: absolute;
+    top: 42.5%;
+    left: 0;
+    text-align: center;
+    width: 100%;
   }
 }
 
@@ -71,6 +277,17 @@ body {
   background-size: cover!important;
   height: 750px;
   overflow: hidden;
+  img {
+    position:relative;
+    border:none;
+    outline:none;
+    display:block;
+    width: 100%;
+    height: auto;
+    min-height: auto;
+    margin:0;
+    padding:0;
+  }
   .image-block {
     float: left;
     display: block;
@@ -84,8 +301,14 @@ body {
   z-index: -1;
   display: table;
   .cover-inner {
+    position: absolute; 
+    z-index: 99; 
+    bottom: 0; 
+    left: 0; 
+    right: 0; 
+    /*position: absolute;
     display: table-cell;
-    vertical-align: middle;
+    vertical-align: middle;*/
   }
   * {
     color: #fff;
@@ -181,77 +404,6 @@ body {
     -o-transition: all 200ms ease;
     transition: all 200ms ease;
     background: rgba(255, 255, 255, 0.2);
-  }
-}
-
-
-.main-content {
-  margin-top: 0;
-  padding-bottom: 0;
-}
-
-.site-footer {
-  background-color: #222;
-  border-top: 0;
-  * {
-    color: #fff;
-  }
-}
-
-#newsletter-footer, #social, #payments {
-  max-width: 1180px;
-  width: 100%;
-  padding: 0 30px;
-  display: table;
-  margin: auto;
-  p, form {
-    margin-bottom: 0px!important;
-  }
-  .grid__item {
-    display: table-cell;
-    vertical-align: middle;
-    float: none;
-  }
-  * {
-    letter-spacing: 0.06em;
-  }
-}
-
-#social, #payments {
-  ul {
-    width: 100%;
-    li {
-      float: left;
-      margin: 5px 10px;
-      font-size: 1.5em;
-    }
-  }
-}
-
-#payments {
-  text-align: center;
-  ul {
-    li {
-      float: center;
-    }
-  }
-}
-
-.contact-footer p {
-  text-align: right;
-  font-weight: bold;
-}
-
-.payment-wrapper {
-  background: #f2f2f2;
-  width: 100%;
-  float: left;
-}
-
-#payments {
-  p {
-    text-align: center;
-    margin-top: 30px;
   }
 }
 

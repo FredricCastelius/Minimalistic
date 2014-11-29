@@ -1,14 +1,19 @@
 <footer class="site-footer small--text-center" role="contentinfo">
 
   {% if settings.footer_newsletter_enable %}
+
   <div class="grid" id="newsletter-footer">
-      <div class="grid__item large--one-half medium--one-third">
-        <p>Be the first with the latest news and take advantage of some great offers</p>
+
+      <div class="grid__item">
+        <h6>Newsletter</h6>
       </div>
-      <div class="grid__item large--one-half medium--one-third">
+      
+      <div class="grid__item">
         {% include 'newsletter-form' %}
       </div>
+
   </div>
+
   {% endif %}
 
 

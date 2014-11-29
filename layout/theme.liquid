@@ -36,6 +36,9 @@
   {{ 'ajaxify.scss.css' | asset_url | stylesheet_tag }}
   {% endif %}
 
+  <!-- Fonts ================================================== -->
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
   <!-- CSS ================================================== -->
   {{ 'timber.scss.css' | asset_url | stylesheet_tag }}
   {{ 'style.scss.css' | asset_url | stylesheet_tag }}
@@ -64,46 +67,63 @@
 {% comment %}
   Add the page template as a class for easy page or template specific styling.
 {% endcomment %}
+
 <body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" >
 
-  {% if template == 'index' %}
-    <style>
-      .site-header {
-        position: absolute;
-      }
-      .site-header * {
-        color: #fff;
-      }
-    </style>
-  {% endif %}
   <header class="site-header" role="banner">
+
     <div class="wrapper">
 
       <div class="grid--full">
-        <div class="grid__item large--one-half">
+
+        <!-- logo -->
+        <div class="grid__item large--one-third">
+
           {% comment %}
             Use the uploaded logo from theme settings if enabled.
             Site name gets precedence with H1 tag on homepage, div on other pages.
           {% endcomment %}
+          
           {% if template == 'index' %}
+
             <h1 class="header-logo large--left" itemscope itemtype="http://schema.org/Organization">
+          
           {% else %}
+          
             <div class="h1 header-logo large--left" itemscope itemtype="http://schema.org/Organization">
+          
           {% endif %}
+          
             {% if settings.logo_use_image %}
+          
               <a href="/" itemprop="url">
                 <img src="{{ 'logo.png' | asset_url }}" alt="{{ shop.name }}" itemprop="logo">
               </a>
+          
             {% else %}
+          
               <a href="/" itemprop="url">{{ shop.name }}</a>
+          
             {% endif %}
+          
           {% if template == 'index' %}
+          
             </h1>
+          
           {% else %}
+          
             </div>
+          
           {% endif %}
+
         </div>
-        <div class="grid__item large--one-half text-center large--text-right">
+
+        <!-- navigation & cart -->
+
+        <div class="grid__item large--two-third large--text-right medium--text-center small--text-center">
+
+          <!-- cart -->
+
           {% comment %}
             Show number of items in the cart and total cost in the /cart link
 
@@ -113,71 +133,109 @@
               - #cartCost updates the total cost of the cart
               - Documentation:  http://shopify.com/timber#ajax-cart
           {% endcomment %}
+
           <a href="/cart" id="CartToggle">
+            
             <div class="icon-fallback-text">
               <span class="icon icon-cart"></span>
               <span class="fallback-text">{{ 'layout.cart.title' | t }}</span>
             </div>
+
             <span id="CartCount">{{ cart.item_count }}</span>
+
           </a>
 
-          {% comment %}
-            If customer accounts are enabled, provide login and create account links
-          {% endcomment %}
-          {% if shop.customer_accounts_enabled %}
-          <p class="site-header--text-links">
-            {% if customer %}
-              {% if customer.first_name != blank %}
-                {% capture first_name %}<a href="/account">{{ customer.first_name }}</a>{% endcapture %}
-                {{ 'layout.customer.logged_in_as_html' | t: first_name: first_name }}
-              {% else %}
-                <a href="/account">{{ 'layout.customer.account' | t }}</a>
+          <!-- costumer accounts -->
+
+            {% comment %}
+              If customer accounts are enabled, provide login and create account links
+            {% endcomment %}
+
+            {% if shop.customer_accounts_enabled %}
+
+              <!-- text links -->
+              {% if settings.costumer_account_display_option == 'links' %}
+
+                <div id="account-area-text-links">
+
+                  <p class="site-header--text-links">
+                    
+                    {% if customer %}
+                      
+                      {% if customer.first_name != blank %}
+                    
+                        {% capture first_name %}<a href="/account">{{ customer.first_name }}</a>{% endcapture %}
+                        {{ 'layout.customer.logged_in_as_html' | t: first_name: first_name }}
+                    
+                      {% else %}
+                    
+                        <a href="/account">{{ 'layout.customer.account' | t }}</a>
+                    
+                      {% endif %}
+
+                      <span class="sep">/</span> {{ 'layout.customer.log_out' | t | customer_logout_link }}
+                    
+                    {% else %}
+                    
+                      {{ 'layout.customer.log_in' | t | customer_login_link }}
+                      {% if shop.customer_accounts_optional %}
+                      <span class="sep">/</span> {{ 'layout.customer.create_account' | t | customer_register_link }}
+                      {% endif %}
+                    
+                    {% endif %}
+
+                  </p>
+
+                </div>
+
               {% endif %}
-              | {{ 'layout.customer.log_out' | t | customer_logout_link }}
-            {% else %}
-              {{ 'layout.customer.log_in' | t | customer_login_link }}
-              {% if shop.customer_accounts_optional %}
-              | {{ 'layout.customer.create_account' | t | customer_register_link }}
+
+              <!-- icon -->
+              {% if settings.costumer_account_display_option == 'icon' %}
+                
+                <div id="account-area-icon">
+                  <a href="/account"><i class="fa fa-user"></i></a>
+                </div>
+
               {% endif %}
-            {% endif %}
-          </p>
+
           {% endif %}
 
-          <nav class="main-nav" role="navigation">
-                {% include 'site-nav' %}
-                <!--<div class="grid__item large--one-third">
-                  <div class="nav-search">
-                    {% include 'search-bar' %}
-                  </div>
-                </div>-->
+          <!-- navigation -->
+          <nav role="navigation">
+              {% include 'site-nav' %}
+              <!--<div class="grid__item large--one-third">
+                <div class="nav-search">
+                  {% include 'search-bar' %}
+                </div>
+              </div>-->
           </nav>
 
         </div>
-      </div>
+    
+      </div> <!-- grid--full -->
+    
+    </div> <!-- wrapper -->
 
-    </div>
   </header>
 
+<!--
   {% if template == 'index' %}
 
-  <div class="cover text-center">
+  <figure>
 
-    <div class="image-block" style="opacity: 1;"><video id="frontpage-video" autoplay="" loop="" style="width: 101%; height: auto; left: 0px; top: 0px;"><source src="http://d27shkkua6xyjc.cloudfront.net/videos/maaemo-film-2.mp4?mtime=20141113185431" type="video/mp4"><source src="http://d27shkkua6xyjc.cloudfront.net/videos/maaemo-film-2.ogv?mtime=20141113185421" type="video/ogg"></video>
-                    
-    <img class="head-image" sizes="120vw" alt="" data-original-width="1920" data-original-height="1080" src="http://d27shkkua6xyjc.cloudfront.net/images/00.Frontpage/_1920x1080_crop_center-center/Frontpage_06_2400px.jpg?mtime=20141117152307" style="display: none; width: 100%; height: auto; left: 0px; top: 0px;">
-              
-    </div>
+      <img src="https://cdn.shopify.com/s/files/1/0710/6771/files/cover_e00f9637-6feb-4e33-9d30-fa1c34a27b6a.jpg?2048">
 
-  </div>
+      <figcaption>
 
-  <div class="cover text-center" style="background: url('https://cdn.shopify.com/s/files/1/0710/6771/files/e2ddba22.jpeg?1084');">
+        <div class="aligner">
+          <h1>Fall / Spring 15 just in</h1>
+          <a href="http://supply-stuff.myshopify.com/collections/all">Shop</a>
+        </div>
 
-      <div class="cover-inner cover-action text-center" style="">
-        <h1>Fall / Spring 15 just in</h1>
-        <a href="http://supply-stuff.myshopify.com/collections/fall-spring-15">Browse</a>
-      </div>
+      </figcaption>
 
-  </div>
+  </figure>
 
   <div class="box-medium text-center" style="background: url('http://cdn.shopify.com/s/files/1/0476/5925/t/6/assets/2014-paris-6_1024x1280.jpg?4402');">
 
@@ -231,7 +289,7 @@
   </div>
 
 
-  {% endif %}
+  {% endif %}-->
 
 
   <main class="wrapper main-content" role="main">
