@@ -122,7 +122,7 @@ $successGreenBg: #ecfef0;
 $siteWidth: 1180px;
 $gutter: 30px;
 $gridGutter: 30px; // can be a %, but nested grids will have smaller margins because of it
-$radius: 3px;
+$radius: 0px;
 
 /*================ Typography ================*/
 
@@ -1315,6 +1315,7 @@ select {
 
   &:focus {
     border: 1px solid darken($colorBorder, 10%);
+    outline: 0;
   }
 
   &[disabled],

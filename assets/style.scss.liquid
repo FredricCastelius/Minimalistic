@@ -83,7 +83,7 @@ header[role="banner"] {
 
     /* under medium */
     /* cart gose to top right on smaler devices for making space for navigation */
-    
+
     @media (max-width: $medium) {
       position: absolute;
       top: 12px;
@@ -156,7 +156,103 @@ header[role="banner"] {
   #Footer 
 ==============================================================================*/
 
-.site-footer {
+footer[role="contentinfo"] {
+  
+  .full-row-wrapper {
+    background: {{ settings.newsletter_signup_bg }};
+  }
+
+  // newsletter
+  #newsletter-signup {
+    padding: 50px 0 56px 0;
+    
+    h6 { // the label
+      color: {{ settings.newsletter-signup-label }};
+      margin-bottom: 15px;
+    }
+
+    form {
+      max-width: 380px;
+      margin: auto;
+      input[type="email"] {
+        background: {{ settings.newsletter_signup_bg }};
+        color: #fff;
+        border: 2px solid #fff!important; 
+      }
+      input[type="submit"] {
+        background: #fff;
+        color: {{ settings.newsletter_signup_bg }};
+      }
+    }
+  }
+
+
+  // social buttons
+  .social-icons {
+    margin: 10px 0 8px 0;
+    
+    @media (max-width: $medium) {
+      margin: 15px 0 0 0;
+    }
+
+    li {
+      
+      &:first-child {
+        margin-left: 0;
+      }
+
+      //float: left;
+      margin: 0px 7px;
+
+      * {
+        font-size: 1.2em;
+        color: {{ settings.color_primary }};
+      }
+    }
+  }
+
+  // contact details 
+  #contact-details {
+    margin: 12px 0 8px 0;
+
+    @media (max-width: $medium) {
+      margin: 0 0 15px 0;
+    }
+
+    p {
+      font-weight: bold;
+      //float: right;
+      margin-bottom: 0;
+    }
+  }
+
+  // accepted payment methods
+  #accepted-payment-methods {
+    background: #f2f2f2;
+    padding-top: 20px;
+    p {
+      font-weight: bold;
+    }
+    ul {
+      margin: 8px 0 10px 0;
+      li {
+        
+        &:first-child {
+          margin-left: 0;
+        }
+
+        margin: 0px 7px;
+
+        * {
+          font-size: 1.2em;
+          color: {{ settings.color_primary }};
+        }
+      }
+    }
+  }
+}
+
+/*.site-footer {
   background-color: #222;
   border-top: 0;
   * {
@@ -219,7 +315,7 @@ header[role="banner"] {
     text-align: center;
     margin-top: 30px;
   }
-}
+}*/
 
 /*============================================================================
   #Main 
