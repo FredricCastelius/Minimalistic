@@ -48,8 +48,16 @@ body {
   #Header 
 ==============================================================================*/
 
-header[role="banner"] {
+.template-index {
+  header[role="banner"] { 
+    position: absolute;
+    * {
+      color: #fff!important;
+    }
+  }
+}
 
+header[role="banner"] {
   background: transparent;
   z-index: 1;
   width: 100%;
@@ -355,10 +363,29 @@ figure {
 
   &.small-cover {
     width: 25%;
+    
+    @media (max-width: $medium) {  
+      width: 50%;
+    }
+
   }
 
   * {
     color: #fff;
+  }
+
+  img.big-cover-desktop {
+    display: block;
+    @media (max-width: $medium) {  
+      display: none;
+    }
+  }
+
+  img.big-cover-mobile {
+    display: none;
+    @media (max-width: $medium) {  
+      display: block;
+    }
   }
 
   figcaption {
@@ -374,6 +401,17 @@ figure {
       left: 0;
       text-align: center;
       width: 100%;
+
+      h1, h2, h3, h4, h5, h6 {
+        font-size: 2em;
+        letter-spacing: 0.06em;
+
+        @media (max-width: $medium) { 
+          font-size: 1.1em;
+          padding: 0 15px 10px 15px;
+        }
+
+      }
 
       a {
         border: 1px solid #fff;
@@ -396,141 +434,6 @@ figure {
         }
       }
     }
-  }
-}
-
-
-.cover {
-  background-size: cover!important;
-  height: 750px;
-  overflow: hidden;
-  img {
-    position:relative;
-    border:none;
-    outline:none;
-    display:block;
-    width: 100%;
-    height: auto;
-    min-height: auto;
-    margin:0;
-    padding:0;
-  }
-  .image-block {
-    float: left;
-    display: block;
-    overflow: hidden;
-    width: 100%;
-    video {
-      width: 102%!important;
-    }
-  }
-  width: 100%;
-  z-index: -1;
-  display: table;
-  .cover-inner {
-    position: absolute; 
-    z-index: 99; 
-    bottom: 0; 
-    left: 0; 
-    right: 0; 
-    /*position: absolute;
-    display: table-cell;
-    vertical-align: middle;*/
-  }
-  * {
-    color: #fff;
-  }
-  a {
-    border: 1px solid #fff;
-    border-radius: 3px;
-    padding: 10px 20px;
-    text-decoration: none;
-    letter-spacing: 0.06em;
-    -webkit-transition: all 200ms ease;
-    -moz-transition: all 200ms ease;
-    -ms-transition: all 200ms ease;
-    -o-transition: all 200ms ease;
-    transition: all 200ms ease;
-  }
-  a:hover {
-    -webkit-transition: all 200ms ease;
-    -moz-transition: all 200ms ease;
-    -ms-transition: all 200ms ease;
-    -o-transition: all 200ms ease;
-    transition: all 200ms ease;
-    background: rgba(255, 255, 255, 0.2);
-  }
-}
-
-.box-medium {
-  background-size: cover!important;
-  height: 650px;
-  width: 50%;
-  float: left;
-  z-index: -1;
-  display: table;
-  .cover-inner {
-    display: table-cell;
-    vertical-align: middle;
-  }
-  * {
-    color: #fff;
-  }
-  a {
-    border: 1px solid #fff;
-    border-radius: 3px;
-    padding: 10px 20px;
-    text-decoration: none;
-    letter-spacing: 0.06em;
-    -webkit-transition: all 200ms ease;
-    -moz-transition: all 200ms ease;
-    -ms-transition: all 200ms ease;
-    -o-transition: all 200ms ease;
-    transition: all 200ms ease;
-  }
-  a:hover {
-    -webkit-transition: all 200ms ease;
-    -moz-transition: all 200ms ease;
-    -ms-transition: all 200ms ease;
-    -o-transition: all 200ms ease;
-    transition: all 200ms ease;
-    background: rgba(255, 255, 255, 0.2);
-  }
-}
-
-.box-smal {
-  background-size: cover!important;
-  height: 550px;
-  width: 25%;
-  float: left;
-  z-index: -1;
-  display: table;
-  .cover-inner {
-    display: table-cell;
-    vertical-align: middle;
-  }
-  * {
-    color: #fff;
-  }
-  a {
-    border: 1px solid #fff;
-    border-radius: 3px;
-    padding: 10px 20px;
-    text-decoration: none;
-    letter-spacing: 0.06em;
-    -webkit-transition: all 200ms ease;
-    -moz-transition: all 200ms ease;
-    -ms-transition: all 200ms ease;
-    -o-transition: all 200ms ease;
-    transition: all 200ms ease;
-  }
-  a:hover {
-    -webkit-transition: all 200ms ease;
-    -moz-transition: all 200ms ease;
-    -ms-transition: all 200ms ease;
-    -o-transition: all 200ms ease;
-    transition: all 200ms ease;
-    background: rgba(255, 255, 255, 0.2);
   }
 }
 

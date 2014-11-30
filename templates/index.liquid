@@ -3,13 +3,18 @@
 
 <figure class="big-cover">
 
-    <img src="{{ 'big-cover.jpg' | asset_url }}" alt="{{ shop.name }}" itemprop="logo">
+    <img class="big-cover-desktop" src="{{ 'big-cover.jpg' | asset_url }}" alt="{{ shop.name }}" itemprop="logo">
+
+    <img class="big-cover-mobile" src="{{ 'big-cover-mobile.jpg' | asset_url }}" alt="{{ shop.name }}" itemprop="logo">
 
     <figcaption>
 
       <div>
-        <h1>Fall / Spring 15 just in</h1>
-        <a href="http://supply-stuff.myshopify.com/collections/all">Shop</a>
+        <h2>{{ settings.big-cover-text }}</h2>
+        
+        {% if settings.big-cover-button %}
+          <a href="{{ settings.big-cover-button-link }}">{{ settings.big-cover-button-text }}</a>
+        {% endif %}
       </div>
 
     </figcaption>
@@ -26,7 +31,7 @@
     <figcaption>
 
       <div>
-        <h1>Fall / Spring 15 just in</h1>
+        <h3>{{ settings.medium-cover-text-1 }}</h3>
         <a href="http://supply-stuff.myshopify.com/collections/all">Shop</a>
       </div>
 
@@ -41,7 +46,7 @@
     <figcaption>
 
       <div>
-        <h1>Fall / Spring 15 just in</h1>
+        <h3>{{ settings.medium-cover-text-2 }}</h3>
         <a href="http://supply-stuff.myshopify.com/collections/all">Shop</a>
       </div>
 
@@ -111,63 +116,6 @@
     </figcaption>
 
 </figure>
-
-<!--
-
-
-
-  <div class="box-medium text-center" style="background: url('http://cdn.shopify.com/s/files/1/0476/5925/t/6/assets/2014-paris-6_1024x1280.jpg?4402');">
-
-      <div class="cover-inner cover-action text-center" style="">
-        <h2>The New Wayfarers</h2>
-        <a href="http://supply-stuff.myshopify.com/collections/fall-spring-15">Browse</a>
-      </div>
-
-  </div>
-
-  <div class="box-medium text-center" style="background: url('http://cdn.shopify.com/s/files/1/0476/5925/t/6/assets/2014-paris-4_1024x1538.jpg?4402');">
-
-      <div class="cover-inner cover-action text-center" style="">
-        <h3>check out our blog. It's rad.</h3>
-        <a href="http://supply-stuff.myshopify.com/collections/fall-spring-15">Notes</a>
-      </div>
-
-  </div>
-
-
-  <div class="box-smal text-center" style="background: url('https://cdn.shopify.com/s/files/1/0710/6771/files/FC.jpg?1133');">
-
-      <div class="cover-inner cover-action text-center" style="">
-        <h6>Our new shop</h6>
-      </div>
-
-  </div>
-
-  <div class="box-smal text-center" style="background: url('http://cdn.shopify.com/s/files/1/0476/5925/t/6/assets/2014-paris-12_1024x1280.jpg?4402');">
-
-      <div class="cover-inner cover-action text-center" style="">
-        <h6>Made in malta</h6>
-      </div>
-
-  </div>
-
-  <div class="box-smal text-center" style="background: url('http://cdn.shopify.com/s/files/1/0476/5925/t/6/assets/2014-paris-10_1024x1280.jpg?4402');">
-
-      <div class="cover-inner cover-action text-center" style="">
-        <h6>Free shipping</h6>
-      </div>
-
-  </div>
-
-  <div class="box-smal text-center" style="background: url('http://cdn.shopify.com/s/files/1/0476/5925/t/6/assets/2014-paris-8_1024x1280.jpg?4402');">
-
-      <div class="cover-inner cover-action text-center" style="">
-        <h6>Why note</h6>
-      </div>
-
-  </div>
-
--->
 
 <!--
 {% comment %}
@@ -316,8 +264,7 @@
 
 </div>
 
-<hr>
-
+<!--
 {% comment %}
   Loop through three recent blog articles with the following code.
 
@@ -368,5 +315,6 @@
     </div>
 
   {% endfor %}
-</div>
--->
+</div>-->
+
+

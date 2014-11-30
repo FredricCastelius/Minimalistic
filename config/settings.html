@@ -6,6 +6,7 @@
     More info on settings:
       - http://docs.shopify.com/themes/theme-templates/settings
 -->
+
 <div class="section-info">
   <h3 class="heading">Timber Theme Framework by <a href="http://www.shopify.com">Shopify</a></h3>
   <br />
@@ -255,34 +256,250 @@
   </table>
 </fieldset>
 
-<!-- Store front -->
+<!-- Storefront -->
+
 <fieldset>
-  <legend>Store front</legend>
+
+  <legend>Storefront</legend>
+
   <table>
+    
+    <!-- The Big image -->
+    <tr>
+      <td colspan="3">
+        <h3 class="heading">The big sized image</h3>
+      </td>
+    </tr>
+
+    <!-- desktop file  -->
     <tr>
       <th>
-        <label for="big-cover">Big cover image</label>
+        <label for="big-cover">Image viewed on larger screens</label>
       </th>
-      <td><input type="file" name="big-cover.jpg" id="big-cover" /></td>
+      <td><input type="file" name="big-cover-desktop.jpg" id="big-cover" /></td>
+      <td><small>Recommended size: 1920px x 960px</small></td>
     </tr>
-  </table>
-  <table>
+
+    <!-- mobile file -->
+    <tr>
+      <th>
+        <label for="big-cover">Image viewed on smaller screens</label>
+      </th>
+      <td><input type="file" name="big-cover-mobile.jpg" id="big-cover" /></td>
+      <td><small>Recommended size: 1400px x 1400px</small></td>
+    </tr>
+
+    <!-- text -->
+    <tr>
+      <th>
+          <label for="big-cover-text">Text</label>
+      </th>
+      <td>
+          <input type="text" name="big-cover-text" value=""/>
+      </td>
+      <td>
+        <small>Type something neat</small>
+      </td>
+    </tr>
+
+    <!-- button -->
+    <tr>
+        <th>
+            <label for="big-cover-button">Button</label>
+        </th>      
+        <td>
+            <input type="checkbox" name="big-cover-button" value="1" />
+        </td>
+        <td>
+          <small>Should a button be displayed?</small>
+        </td>
+    </tr>
+
+    <!-- button text -->
+    <tr>
+      <th>
+          <label for="big-cover-button-text">Button text</label>
+      </th>
+      <td>
+          <input type="text" name="big-cover-button-text" value="Shop" />
+      </td>
+      <td>
+        <small>The text that is displayed in the button</small>
+      </td>
+    </tr>
+
+    <!-- link -->
+    <tr>
+        <th>
+            <label for="big-cover-button-link">Button link</label>
+        </th>
+        <td>
+            <input type="text" name="big-cover-button-link" value="/" />
+        </td>
+        <td>
+          <small>Where the button will link to</small>
+        </td>
+    </tr>
+
+    <!-- medium first -->
     <tr>
       <th>
         <label for="medium-cover">medium cover image 1</label>
       </th>
       <td><input type="file" name="medium-cover-1.jpg" id="medium-cover" /></td>
     </tr>
+    <tr>
+      <th>
+          <label for="medium-cover-text-1">Medium cover text</label>
+      </th>
+      <td>
+          <input type="text" name="medium-cover-text-1" value="" />
+      </td>
+    </tr>  
+
+    <!-- medium #1 -->
+    <tr>
+      <td colspan="3">
+        <h3 class="heading">The first medium sized image</h3>
+      </td>
+    </tr>
+
+    <!-- file  -->
+    <tr>
+      <th>
+        <label for="medium-cover-1">Image</label>
+      </th>
+      <td><input type="file" name="medium-cover-1.jpg" id="medium-cover-1" /></td>
+      <td><small>Recommended size: 1920px x 960px</small></td>
+    </tr>
+
+    <!-- text -->
+    <tr>
+      <th>
+          <label for="medium-cover-1-text">Text</label>
+      </th>
+      <td>
+          <input type="text" name="medium-cover-1-text" value=""/>
+      </td>
+      <td>
+        <small>Type something neat</small>
+      </td>
+    </tr>
+
+    <!-- button -->
+    <tr>
+        <th>
+            <label for="medium-cover-1-button">Button</label>
+        </th>      
+        <td>
+            <input type="checkbox" name="medium-cover-1-button" value="1" />
+        </td>
+        <td>
+          <small>Should a button be displayed?</small>
+        </td>
+    </tr>
+
+    <!-- button text -->
+    <tr>
+      <th>
+          <label for="medium-cover-1-button-text">Button text</label>
+      </th>
+      <td>
+          <input type="text" name="medium-cover-1-button-text" value="Shop" />
+      </td>
+      <td>
+        <small>The text that is displayed in the button</small>
+      </td>
+    </tr>
+
+    <!-- link -->
+    <tr>
+        <th>
+            <label for="medium-cover-1-button-link">Button link</label>
+        </th>
+        <td>
+            <input type="text" name="medium-cover-1-button-link" value="/" />
+        </td>
+        <td>
+          <small>Where the button will link to</small>
+        </td>
+    </tr>
+
+    <!-- medium #2 -->
+    <tr>
+      <td colspan="3">
+        <h3 class="heading">The second medium sized image</h3>
+      </td>
+    </tr>
+
+    <!-- file -->
+    <tr>
+      <th>
+        <label for="medium-cover-2">Image</label>
+      </th>
+      <td><input type="file" name="medium-cover-2.jpg" id="medium-cover-2" /></td>
+      <td><small>Recommended size: 1920px x 960px</small></td>
+    </tr>
+
+    <!-- text -->
+    <tr>
+      <th>
+          <label for="medium-cover-2-text">Text</label>
+      </th>
+      <td>
+          <input type="text" name="medium-cover-2-text" value=""/>
+      </td>
+      <td>
+        <small>Type something neat</small>
+      </td>
+    </tr>
+
+    <!-- button -->
+    <tr>
+        <th>
+            <label for="medium-cover-2-button">Button</label>
+        </th>      
+        <td>
+            <input type="checkbox" name="medium-cover-2-button" value="1" />
+        </td>
+        <td>
+          <small>Should a button be displayed?</small>
+        </td>
+    </tr>
+
+    <!-- button text -->
+    <tr>
+      <th>
+          <label for="medium-cover-2-button-text">Button text</label>
+      </th>
+      <td>
+          <input type="text" name="medium-cover-2-button-text" value="Shop" />
+      </td>
+      <td>
+        <small>The text that is displayed in the button</small>
+      </td>
+    </tr>
+
+    <!-- link -->
+    <tr>
+        <th>
+            <label for="medium-cover-2-button-link">Button link</label>
+        </th>
+        <td>
+            <input type="text" name="medium-cover-2-button-link" value="/" />
+        </td>
+        <td>
+          <small>Where the button will link to</small>
+        </td>
+    </tr>
+
   </table>
   <table>
     <tr>
       <th>
-        <label for="medium-cover">medium cover image 2</label>
+        <h3 class="heading">The #1 small sized image</h3>
       </th>
-      <td><input type="file" name="medium-cover-2.jpg" id="medium-cover" /></td>
     </tr>
-  </table>
-  <table>
     <tr>
       <th>
         <label for="small-cover">small cover image 1</label>
