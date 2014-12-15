@@ -8,28 +8,113 @@
 -->
 
 <div class="section-info">
-  <h3 class="heading">Timber Theme Framework by <a href="http://www.shopify.com">Shopify</a></h3>
-  <br />
-  <p>Theme settings allow designers to provide an easy way for any user to customize the look and feel of their shop without having to delve into HTML or CSS code. Please see our <a title="Open theme setting documentation" href="http://docs.shopify.com/themes/theme-templates/settings">help page on theme settings</a> to learn more about how you can make the theme customizable.</p>
-  <p>If you require any support for Timber, please review the <a href="http://shopify.github.io/Timber/">documentation</a> or contact us at <a href="mailto:timber@shopify.com">timber@shopify.com</a></p>
-  <br />
+  <h3 class="heading">Minimalist by Fredric Castelius</h3>
 </div>
 
-<!-- Colors -->
+<!-- general styling -->
+
 <fieldset>
-  <legend>Colors</legend>
+  <legend>General</legend>
   <table>
+
+    <!-- Body text -->
     <tr>
       <td colspan="3">
-        Use <em>class="color"</em> on a an <em>input</em> tag to bring up the color picker.<br />
-        Only a few colors have been included here as an example.
+        <h3 class="heading">Body text</h3>
       </td>
     </tr>
+    
+      <!-- Body text font -->
+      <tr class="horizontal">
+        <th><label for="base_font">Font</label></th>
+        <td>
+          <select name="base_font" id="google_font" class="font">
+            <optgroup label="Google Web Fonts">
+              <option value='Google+Arvo'>Arvo</option>
+              <option value='Google+Asap'>Asap</option>
+              <option value='Google+Cabin'>Cabin</option>
+              <option value='Google+Copse'>Copse</option>
+              <option value='Google+Droid+Sans'>Droid Sans</option>
+              <option value='Google+Droid+Serif'>Droid Serif</option>
+              <option value='Google+Gentium+Book+Basic'>Gentium Book Basic</option>
+              <option value='Google+Josefin+Slab'>Josefin Slab</option>
+              <option value='Google+Josefin+Sans'>Josefin Sans</option>
+              <option value='Google+Kreon'>Kreon</option>
+              <option value='Google+Lato'>Lato</option>
+              <option value='Google+Merriweather'>Merriweather</option>
+              <option value='Google+Old+Standard+TT'>Old Standard TT</option>
+              <option value='Google+Open+Sans'>Open Sans</option>
+            </optgroup>
+            <optgroup label="Web Fonts">
+              <option value='ProximaNovaLight'>Proxima Nova</option>
+            </optgroup>
+          </select>
+        </td>
+        <td><small>The main font of page</small></td>
+      </tr>
+
+      <!-- Body text color -->
+      <tr>
+        <th>
+          <label for="color_body_text">Color</label>
+        </th>
+        <td colspan="2"><input id="color_body_text" name="color_body_text" class="color" type="text" value="#333333" /></td>
+      </tr>
+
+      <!-- Body text transform -->
+      <tr class="horizontal">
+        <th><label for="base_font_transform">Transform</label></th>
+        <td>
+          <select name="base_font_transform" id="base_font_transform">
+            <option value='normal'>Normal</option>
+            <option value='uppercase'>Uppercase</option>
+          </select>
+        </td>
+        <td><small>UPPERCASE or Normal</small></td>
+      </tr>
+
+
+    <!-- Headings -->
     <tr>
       <td colspan="3">
-        <h3 class="heading">General Colors</h3>
+        <h3 class="heading">Headings</h3>
       </td>
     </tr>
+
+      <tr class="horizontal">
+        <th><label for="header_font">Font</label></th>
+        <td>
+          <select name="header_font" id="google_font" class="font">
+            <optgroup label="Google Web Fonts">
+              <option value='Google+Arvo'>Arvo</option>
+              <option value='Google+Asap'>Asap</option>
+              <option value='Google+Cabin'>Cabin</option>
+              <option value='Google+Copse'>Copse</option>
+              <option value='Google+Droid+Sans'>Droid Sans</option>
+              <option value='Google+Droid+Serif'>Droid Serif</option>
+              <option value='Google+Gentium+Book+Basic'>Gentium Book Basic</option>
+              <option value='Google+Josefin+Slab'>Josefin Slab</option>
+              <option value='Google+Josefin+Sans'>Josefin Sans</option>
+              <option value='Google+Kreon'>Kreon</option>
+              <option value='Google+Lato'>Lato</option>
+              <option value='Google+Merriweather'>Merriweather</option>
+              <option value='Google+Old+Standard+TT'>Old Standard TT</option>
+              <option value='Google+Open+Sans'>Open Sans</option>
+            </optgroup>
+            <optgroup label="Web Fonts">
+              <option value='ProximaNovaLight'>Proxima Nova</option>
+            </optgroup>
+          </select>
+        </td>
+        <td><small>Font for all headings</small></td>
+      </tr>
+
+      <tr>
+        <td colspan="3">
+          <h3 class="heading">General Colors</h3>
+        </td>
+      </tr>
+
     <tr>
       <th>
         <label for="color_primary">Primary Color</label>
@@ -57,17 +142,6 @@
     </tr>
     <tr>
       <td colspan="3">
-        <h3 class="heading">Body Text</h3>
-      </td>
-    </tr>
-    <tr>
-      <th>
-        <label for="color_body_text">Body Text</label>
-      </th>
-      <td colspan="2"><input id="color_body_text" name="color_body_text" class="color" type="text" value="#333333" /></td>
-    </tr>
-    <tr>
-      <td colspan="3">
         <h3 class="heading">Footer</h3>
       </td>
     </tr>
@@ -85,6 +159,620 @@
     </tr>
   </table>
 </fieldset>
+
+
+
+<!--============================================================================
+  #Storefront
+=============================================================================-->
+
+<fieldset>
+
+  <legend>Storefront</legend>
+
+  <table>
+
+    <!--================ #Hero ================-->
+
+    <tr>
+      <td colspan="3">
+        <h3 class="heading"><br/>Hero</h3>
+      </td>
+    </tr>
+
+    <tr>
+      <td colspan="3">
+        <p>The <a href="http://wikipedia.org/wiki/Hero_image" target="_Blank">hero</a> is the fullscreen image on your stores frontpage.</p>
+      </td>
+    </tr> 
+
+    <!--================ #Hero - Image ================-->
+
+    <tr>
+      <td colspan="3">
+        <h3 class="heading"><br/>Image</h3>
+      </td>
+    </tr>   
+
+    <tr>
+      <td colspan="3">
+         <small><b>Large image</b></small>
+      </td>
+    </tr>
+
+    <tr>
+      <td><input type="file" name="hero-large.jpg" /></td>
+      <td colspan="2">
+        <small>
+          Image viewed on devices with larger screens<br></br>
+          Recommended ratio: 2x1<br></br>
+          Recommended size: 2400px x 1200px
+        </small>
+      </td>
+    </tr>
+
+    <tr>
+      <td colspan="3">
+        <small><b>Small image</b></small>
+      </td>
+    </tr>
+
+    <tr>
+      <td><input type="file" name="hero-small.jpg" /></td>
+      <td colspan="2">
+        <small>
+          Image viewed on devices with smaller screens<br></br>
+          Recommended ratio: 1x1<br></br>
+          Recommended size: 1200px x 1200px
+        </small>
+      </td>
+    </tr>
+
+    <!--================ #Hero - Link ================-->
+
+    <tr>
+      <td colspan="3">
+        <h3 class="heading"><br/>Link <!--<input type="checkbox" name="hero_link_check" value="1" /><small>check to enable</small>--></h3>
+      </td>
+    </tr>   
+
+    <tr>
+      <td colspan="3">
+          <small><b>URL</b></small>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+          <input type="text" name="hero_link_url" value="" />
+      </td>
+      <td colspan="2">
+        <small>Paste in the URL of where you'd like the hero to link to</small>
+      </td>
+    </tr>
+
+    <!--================ #Hero - Text ================-->
+
+    <tr>
+      <td colspan="3">
+        <h3 class="heading"><br/>Heading</h3>
+      </td>
+    </tr>
+
+   <tr>
+      <td colspan="3">
+          <small><b>Text</b></small>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+          <textarea name="hero_heading" cols="60" rows="5" value="" />
+      </td>
+      <td colspan="2">
+        <small>
+          Type something neat<br/>
+          You can use &lt;br&gt; for page break
+        </small>
+      </td>
+    </tr>
+
+   <tr>
+      <td colspan="3">
+          <small><b>Font</b></small>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <select name="hero_heading_font" id="google_font" class="font">
+          <optgroup label="Google Web Fonts">
+            <option value='Google+Arvo'>Arvo</option>
+            <option value='Google+Asap'>Asap</option>
+            <option value='Google+Cabin'>Cabin</option>
+            <option value='Google+Copse'>Copse</option>
+            <option value='Google+Droid+Sans'>Droid Sans</option>
+            <option value='Google+Droid+Serif'>Droid Serif</option>
+            <option value='Google+Gentium+Book+Basic'>Gentium Book Basic</option>
+            <option value='Google+Josefin+Slab'>Josefin Slab</option>
+            <option value='Google+Josefin+Sans'>Josefin Sans</option>
+            <option value='Google+Kreon'>Kreon</option>
+            <option value='Google+Lato'>Lato</option>
+            <option value='Google+Merriweather'>Merriweather</option>
+            <option value='Google+Old+Standard+TT'>Old Standard TT</option>
+            <option value='Google+Open+Sans'>Open Sans</option>
+          </optgroup>
+          <optgroup label="Web Fonts">
+            <option value='ProximaNovaLight'>Proxima Nova</option>
+          </optgroup>
+        </select>
+      </td>
+      <td colspan="2"><small>The hero headings typeface</small></td>
+    </tr>
+
+   <tr>
+      <td colspan="3">
+          <small><b>Color</b></small>
+      </td>
+    </tr>
+
+    <tr>
+      <td><input name="hero_heading_color" class="color" type="text" value="#d3d3d3" /></td>
+      <td colspan="2"><small>Color of the hero heading's text</small></td>
+    </tr>
+
+    <!--<tr>
+      <td colspan="3">
+          <small><b>Text handling</b></small>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <select name="hero_heading_transform">
+          <option value='normal'>Normal</option>
+          <option value='uppercase'>Uppercase</option>
+        </select>
+      </td>
+      <td><small>UPPERCASE or Normal</small></td>
+    </tr>-->
+
+    <!-- button -->
+    <tr>
+        <th>
+            <label for="hero-button">Button</label>
+        </th>      
+        <td>
+            <input type="checkbox" name="hero-button" value="1" />
+        </td>
+        <td>
+          <small>Should a button be displayed?</small>
+        </td>
+    </tr>
+
+    <!-- button text -->
+    <tr>
+      <th>
+          <label for="hero-button-text">Button text</label>
+      </th>
+      <td>
+          <input type="text" name="hero-button-text" value="Shop" />
+      </td>
+      <td>
+        <small>The text that is displayed in the button</small>
+      </td>
+    </tr>
+
+    <!-- medium #1 -->
+    <tr>
+      <td colspan="3">
+        <h3 class="heading">The first medium sized image</h3>
+      </td>
+    </tr>
+
+    <!-- file  -->
+    <tr>
+      <th>
+        <label for="medium-cover-1">Image</label>
+      </th>
+      <td><input type="file" name="medium-cover-1.jpg" id="medium-cover-1" /></td>
+      <td><small>Recommended size: 1920px x 960px</small></td>
+    </tr>
+
+    <!-- text -->
+    <tr>
+      <th>
+          <label for="medium-cover-1-text">Text</label>
+      </th>
+      <td>
+          <input type="text" name="medium-cover-1-text" value=""/>
+      </td>
+      <td>
+        <small>Type something neat</small>
+      </td>
+    </tr>
+
+    <!-- button -->
+    <tr>
+        <th>
+            <label for="medium-cover-1-button">Button</label>
+        </th>      
+        <td>
+            <input type="checkbox" name="medium-cover-1-button" value="1" />
+        </td>
+        <td>
+          <small>Should a button be displayed?</small>
+        </td>
+    </tr>
+
+    <!-- button text -->
+    <tr>
+      <th>
+          <label for="medium-cover-1-button-text">Button text</label>
+      </th>
+      <td>
+          <input type="text" name="medium-cover-1-button-text" value="Shop" />
+      </td>
+      <td>
+        <small>The text that is displayed in the button</small>
+      </td>
+    </tr>
+
+    <!-- link -->
+    <tr>
+        <th>
+            <label for="medium-cover-1-button-link">Button link</label>
+        </th>
+        <td>
+            <input type="text" name="medium-cover-1-button-link" value="/" />
+        </td>
+        <td>
+          <small>Where the button will link to</small>
+        </td>
+    </tr>
+
+    <!-- medium #2 -->
+    <tr>
+      <td colspan="3">
+        <h3 class="heading">The second medium sized image</h3>
+      </td>
+    </tr>
+
+    <!-- file -->
+    <tr>
+      <th>
+        <label for="medium-cover-2">Image</label>
+      </th>
+      <td><input type="file" name="medium-cover-2.jpg" id="medium-cover-2" /></td>
+      <td><small>Recommended size: 1920px x 960px</small></td>
+    </tr>
+
+    <!-- text -->
+    <tr>
+      <th>
+          <label for="medium-cover-2-text">Text</label>
+      </th>
+      <td>
+          <input type="text" name="medium-cover-2-text" value=""/>
+      </td>
+      <td>
+        <small>Type something neat</small>
+      </td>
+    </tr>
+
+    <!-- button -->
+    <tr>
+        <th>
+            <label for="medium-cover-2-button">Button</label>
+        </th>      
+        <td>
+            <input type="checkbox" name="medium-cover-2-button" value="1" />
+        </td>
+        <td>
+          <small>Should a button be displayed?</small>
+        </td>
+    </tr>
+
+    <!-- button text -->
+    <tr>
+      <th>
+          <label for="medium-cover-2-button-text">Button text</label>
+      </th>
+      <td>
+          <input type="text" name="medium-cover-2-button-text" value="Shop" />
+      </td>
+      <td>
+        <small>The text that is displayed in the button</small>
+      </td>
+    </tr>
+
+    <!-- link -->
+    <tr>
+        <th>
+            <label for="medium-cover-2-button-link">Button link</label>
+        </th>
+        <td>
+            <input type="text" name="medium-cover-2-button-link" value="/" />
+        </td>
+        <td>
+          <small>Where the button will link to</small>
+        </td>
+    </tr>
+
+    <!-- small #1 -->
+    <tr>
+      <td colspan="3">
+        <h3 class="heading">The first small sized image</h3>
+      </td>
+    </tr>
+
+    <!-- file -->
+    <tr>
+      <th>
+        <label for="small-cover-1">Image</label>
+      </th>
+      <td><input type="file" name="small-cover-1.jpg" id="small-cover-1" /></td>
+      <td><small>Recommended size: 1920px x 960px</small></td>
+    </tr>
+
+    <!-- text -->
+    <tr>
+      <th>
+          <label for="small-cover-1-text">Text</label>
+      </th>
+      <td>
+          <input type="text" name="small-cover-1-text" value=""/>
+      </td>
+      <td>
+        <small>Type something neat</small>
+      </td>
+    </tr>
+
+    <!-- button -->
+    <tr>
+        <th>
+            <label for="small-cover-1-button">Button</label>
+        </th>      
+        <td>
+            <input type="checkbox" name="small-cover-1-button" value="1" />
+        </td>
+        <td>
+          <small>Should a button be displayed?</small>
+        </td>
+    </tr>
+
+    <!-- button text -->
+    <tr>
+      <th>
+          <label for="small-cover-1-button-text">Button text</label>
+      </th>
+      <td>
+          <input type="text" name="small-cover-1-button-text" value="Shop" />
+      </td>
+      <td>
+        <small>The text that is displayed in the button</small>
+      </td>
+    </tr>
+
+    <!-- link -->
+    <tr>
+        <th>
+            <label for="small-cover-1-button-link">Button link</label>
+        </th>
+        <td>
+            <input type="text" name="small-cover-1-button-link" value="/" />
+        </td>
+        <td>
+          <small>Where the button will link to</small>
+        </td>
+    </tr>
+
+    <!-- small #2 -->
+    <tr>
+      <td colspan="3">
+        <h3 class="heading">The second small sized image</h3>
+      </td>
+    </tr>
+
+    <!-- file -->
+    <tr>
+      <th>
+        <label for="small-cover-2">Image</label>
+      </th>
+      <td><input type="file" name="small-cover-2.jpg" id="small-cover-2" /></td>
+      <td><small>Recommended size: 1920px x 960px</small></td>
+    </tr>
+
+    <!-- text -->
+    <tr>
+      <th>
+          <label for="small-cover-2-text">Text</label>
+      </th>
+      <td>
+          <input type="text" name="small-cover-2-text" value=""/>
+      </td>
+      <td>
+        <small>Type something neat</small>
+      </td>
+    </tr>
+
+    <!-- button -->
+    <tr>
+        <th>
+            <label for="small-cover-2-button">Button</label>
+        </th>      
+        <td>
+            <input type="checkbox" name="small-cover-2-button" value="1" />
+        </td>
+        <td>
+          <small>Should a button be displayed?</small>
+        </td>
+    </tr>
+
+    <!-- button text -->
+    <tr>
+      <th>
+          <label for="small-cover-2-button-text">Button text</label>
+      </th>
+      <td>
+          <input type="text" name="small-cover-2-button-text" value="Shop" />
+      </td>
+      <td>
+        <small>The text that is displayed in the button</small>
+      </td>
+    </tr>
+
+    <!-- link -->
+    <tr>
+        <th>
+            <label for="small-cover-2-button-link">Button link</label>
+        </th>
+        <td>
+            <input type="text" name="medium-cover-2-button-link" value="/" />
+        </td>
+        <td>
+          <small>Where the button will link to</small>
+        </td>
+    </tr>
+
+    <!-- small #3 -->
+    <tr>
+      <td colspan="3">
+        <h3 class="heading">The third small sized image</h3>
+      </td>
+    </tr>
+
+    <!-- file -->
+    <tr>
+      <th>
+        <label for="small-cover-3">Image</label>
+      </th>
+      <td><input type="file" name="small-cover-3.jpg" id="small-cover-3" /></td>
+      <td><small>Recommended size: 1920px x 960px</small></td>
+    </tr>
+
+    <!-- text -->
+    <tr>
+      <th>
+          <label for="small-cover-3-text">Text</label>
+      </th>
+      <td>
+          <input type="text" name="small-cover-3-text" value=""/>
+      </td>
+      <td>
+        <small>Type something neat</small>
+      </td>
+    </tr>
+
+    <!-- button -->
+    <tr>
+        <th>
+            <label for="small-cover-3-button">Button</label>
+        </th>      
+        <td>
+            <input type="checkbox" name="small-cover-3-button" value="1" />
+        </td>
+        <td>
+          <small>Should a button be displayed?</small>
+        </td>
+    </tr>
+
+    <!-- button text -->
+    <tr>
+      <th>
+          <label for="small-cover-3-button-text">Button text</label>
+      </th>
+      <td>
+          <input type="text" name="small-cover-3-button-text" value="Shop" />
+      </td>
+      <td>
+        <small>The text that is displayed in the button</small>
+      </td>
+    </tr>
+
+    <!-- link -->
+    <tr>
+        <th>
+            <label for="small-cover-3-button-link">Button link</label>
+        </th>
+        <td>
+            <input type="text" name="small-cover-3-button-link" value="/" />
+        </td>
+        <td>
+          <small>Where the button will link to</small>
+        </td>
+    </tr>
+
+    <!-- small #4 -->
+    <tr>
+      <td colspan="3">
+        <h3 class="heading">The fourth small sized image</h3>
+      </td>
+    </tr>
+
+    <!-- file -->
+    <tr>
+      <th>
+        <label for="small-cover-4">Image</label>
+      </th>
+      <td><input type="file" name="small-cover-4.jpg" id="small-cover-4" /></td>
+      <td><small>Recommended size: 1920px x 960px</small></td>
+    </tr>
+
+    <!-- text -->
+    <tr>
+      <th>
+          <label for="small-cover-4-text">Text</label>
+      </th>
+      <td>
+          <input type="text" name="small-cover-4-text" value=""/>
+      </td>
+      <td>
+        <small>Type something neat</small>
+      </td>
+    </tr>
+
+    <!-- button -->
+    <tr>
+        <th>
+            <label for="small-cover-4-button">Button</label>
+        </th>      
+        <td>
+            <input type="checkbox" name="small-cover-4-button" value="1" />
+        </td>
+        <td>
+          <small>Should a button be displayed?</small>
+        </td>
+    </tr>
+
+    <!-- button text -->
+    <tr>
+      <th>
+          <label for="small-cover-4-button-text">Button text</label>
+      </th>
+      <td>
+          <input type="text" name="small-cover-4-button-text" value="Shop" />
+      </td>
+      <td>
+        <small>The text that is displayed in the button</small>
+      </td>
+    </tr>
+
+    <!-- link -->
+    <tr>
+        <th>
+            <label for="small-cover-4-button-link">Button link</label>
+        </th>
+        <td>
+            <input type="text" name="small-cover-4-button-link" value="/" />
+        </td>
+        <td>
+          <small>Where the button will link to</small>
+        </td>
+    </tr>
+  </table>
+</fieldset>
+
 
 <!-- Typography -->
 <fieldset>
@@ -252,283 +940,6 @@
     <tr>
       <th><label for="newsletter-signup-label">Newsletter label</label></th>
       <td colspan="2"><input id="newsletter-signup-label" name="newsletter-signup-label" class="color" type="text" value="#fff" /></td>
-    </tr>
-  </table>
-</fieldset>
-
-<!-- Storefront -->
-
-<fieldset>
-
-  <legend>Storefront</legend>
-
-  <table>
-    
-    <!-- The Big image -->
-    <tr>
-      <td colspan="3">
-        <h3 class="heading">The big sized image</h3>
-      </td>
-    </tr>
-
-    <!-- desktop file  -->
-    <tr>
-      <th>
-        <label for="big-cover">Image viewed on larger screens</label>
-      </th>
-      <td><input type="file" name="big-cover-desktop.jpg" id="big-cover" /></td>
-      <td><small>Recommended size: 1920px x 960px</small></td>
-    </tr>
-
-    <!-- mobile file -->
-    <tr>
-      <th>
-        <label for="big-cover">Image viewed on smaller screens</label>
-      </th>
-      <td><input type="file" name="big-cover-mobile.jpg" id="big-cover" /></td>
-      <td><small>Recommended size: 1400px x 1400px</small></td>
-    </tr>
-
-    <!-- text -->
-    <tr>
-      <th>
-          <label for="big-cover-text">Text</label>
-      </th>
-      <td>
-          <input type="text" name="big-cover-text" value=""/>
-      </td>
-      <td>
-        <small>Type something neat</small>
-      </td>
-    </tr>
-
-    <!-- button -->
-    <tr>
-        <th>
-            <label for="big-cover-button">Button</label>
-        </th>      
-        <td>
-            <input type="checkbox" name="big-cover-button" value="1" />
-        </td>
-        <td>
-          <small>Should a button be displayed?</small>
-        </td>
-    </tr>
-
-    <!-- button text -->
-    <tr>
-      <th>
-          <label for="big-cover-button-text">Button text</label>
-      </th>
-      <td>
-          <input type="text" name="big-cover-button-text" value="Shop" />
-      </td>
-      <td>
-        <small>The text that is displayed in the button</small>
-      </td>
-    </tr>
-
-    <!-- link -->
-    <tr>
-        <th>
-            <label for="big-cover-button-link">Button link</label>
-        </th>
-        <td>
-            <input type="text" name="big-cover-button-link" value="/" />
-        </td>
-        <td>
-          <small>Where the button will link to</small>
-        </td>
-    </tr>
-
-    <!-- medium first -->
-    <tr>
-      <th>
-        <label for="medium-cover">medium cover image 1</label>
-      </th>
-      <td><input type="file" name="medium-cover-1.jpg" id="medium-cover" /></td>
-    </tr>
-    <tr>
-      <th>
-          <label for="medium-cover-text-1">Medium cover text</label>
-      </th>
-      <td>
-          <input type="text" name="medium-cover-text-1" value="" />
-      </td>
-    </tr>  
-
-    <!-- medium #1 -->
-    <tr>
-      <td colspan="3">
-        <h3 class="heading">The first medium sized image</h3>
-      </td>
-    </tr>
-
-    <!-- file  -->
-    <tr>
-      <th>
-        <label for="medium-cover-1">Image</label>
-      </th>
-      <td><input type="file" name="medium-cover-1.jpg" id="medium-cover-1" /></td>
-      <td><small>Recommended size: 1920px x 960px</small></td>
-    </tr>
-
-    <!-- text -->
-    <tr>
-      <th>
-          <label for="medium-cover-1-text">Text</label>
-      </th>
-      <td>
-          <input type="text" name="medium-cover-1-text" value=""/>
-      </td>
-      <td>
-        <small>Type something neat</small>
-      </td>
-    </tr>
-
-    <!-- button -->
-    <tr>
-        <th>
-            <label for="medium-cover-1-button">Button</label>
-        </th>      
-        <td>
-            <input type="checkbox" name="medium-cover-1-button" value="1" />
-        </td>
-        <td>
-          <small>Should a button be displayed?</small>
-        </td>
-    </tr>
-
-    <!-- button text -->
-    <tr>
-      <th>
-          <label for="medium-cover-1-button-text">Button text</label>
-      </th>
-      <td>
-          <input type="text" name="medium-cover-1-button-text" value="Shop" />
-      </td>
-      <td>
-        <small>The text that is displayed in the button</small>
-      </td>
-    </tr>
-
-    <!-- link -->
-    <tr>
-        <th>
-            <label for="medium-cover-1-button-link">Button link</label>
-        </th>
-        <td>
-            <input type="text" name="medium-cover-1-button-link" value="/" />
-        </td>
-        <td>
-          <small>Where the button will link to</small>
-        </td>
-    </tr>
-
-    <!-- medium #2 -->
-    <tr>
-      <td colspan="3">
-        <h3 class="heading">The second medium sized image</h3>
-      </td>
-    </tr>
-
-    <!-- file -->
-    <tr>
-      <th>
-        <label for="medium-cover-2">Image</label>
-      </th>
-      <td><input type="file" name="medium-cover-2.jpg" id="medium-cover-2" /></td>
-      <td><small>Recommended size: 1920px x 960px</small></td>
-    </tr>
-
-    <!-- text -->
-    <tr>
-      <th>
-          <label for="medium-cover-2-text">Text</label>
-      </th>
-      <td>
-          <input type="text" name="medium-cover-2-text" value=""/>
-      </td>
-      <td>
-        <small>Type something neat</small>
-      </td>
-    </tr>
-
-    <!-- button -->
-    <tr>
-        <th>
-            <label for="medium-cover-2-button">Button</label>
-        </th>      
-        <td>
-            <input type="checkbox" name="medium-cover-2-button" value="1" />
-        </td>
-        <td>
-          <small>Should a button be displayed?</small>
-        </td>
-    </tr>
-
-    <!-- button text -->
-    <tr>
-      <th>
-          <label for="medium-cover-2-button-text">Button text</label>
-      </th>
-      <td>
-          <input type="text" name="medium-cover-2-button-text" value="Shop" />
-      </td>
-      <td>
-        <small>The text that is displayed in the button</small>
-      </td>
-    </tr>
-
-    <!-- link -->
-    <tr>
-        <th>
-            <label for="medium-cover-2-button-link">Button link</label>
-        </th>
-        <td>
-            <input type="text" name="medium-cover-2-button-link" value="/" />
-        </td>
-        <td>
-          <small>Where the button will link to</small>
-        </td>
-    </tr>
-
-  </table>
-  <table>
-    <tr>
-      <th>
-        <h3 class="heading">The #1 small sized image</h3>
-      </th>
-    </tr>
-    <tr>
-      <th>
-        <label for="small-cover">small cover image 1</label>
-      </th>
-      <td><input type="file" name="small-cover-1.jpg" id="small-cover" /></td>
-    </tr>
-  </table>
-  <table>
-    <tr>
-      <th>
-        <label for="small-cover">small cover image 2</label>
-      </th>
-      <td><input type="file" name="small-cover-2.jpg" id="small-cover" /></td>
-    </tr>
-  </table>
-  <table>
-    <tr>
-      <th>
-        <label for="small-cover">small cover image 3</label>
-      </th>
-      <td><input type="file" name="small-cover-3.jpg" id="small-cover" /></td>
-    </tr>
-  </table>
-  <table>
-    <tr>
-      <th>
-        <label for="small-cover">small cover image 4</label>
-      </th>
-      <td><input type="file" name="small-cover-4.jpg" id="small-cover" /></td>
     </tr>
   </table>
 </fieldset>

@@ -221,7 +221,15 @@
 
   <main role="main">
 
+    {% if template != 'index' %}
+      <div class="wrapper content-wrapper">
+    {% endif %}
+
     {{ content_for_layout }}
+
+    {% if template != 'index' %}
+      </div>
+    {% endif %}
 
   </main>
 

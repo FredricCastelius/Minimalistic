@@ -1,28 +1,37 @@
 
-<!-- big -->
+<!--================ #Hero ================-->
 
-<figure class="big-cover">
+<figure class="hero">
 
-    <img class="big-cover-desktop" src="{{ 'big-cover.jpg' | asset_url }}" alt="{{ shop.name }}" itemprop="logo">
+    {% if settings.hero_link_url != blank %}<a href="{{ settings.hero_link_url }}">{% endif %}
 
-    <img class="big-cover-mobile" src="{{ 'big-cover-mobile.jpg' | asset_url }}" alt="{{ shop.name }}" itemprop="logo">
+      <img class="hero-large" src="{{ 'hero-large.jpg' | asset_url }}" alt="{{ shop.name }}" itemprop="logo">
 
-    <figcaption>
+      <img class="hero-small" src="{{ 'hero-small.jpg' | asset_url }}" alt="{{ shop.name }}" itemprop="logo">
 
-      <div>
-        <h2>{{ settings.big-cover-text }}</h2>
-        
-        {% if settings.big-cover-button %}
-          <a href="{{ settings.big-cover-button-link }}">{{ settings.big-cover-button-text }}</a>
-        {% endif %}
-      </div>
+      <figcaption>
 
-    </figcaption>
+        <div>
+
+          <div class="inner-wrapper">
+
+            {% if settings.hero_heading != blank %} <h2>{{ settings.hero_heading }}</h2> {% endif %}
+
+            {% if settings.hero-button %}
+              <button>{{ settings.hero-button-text }}</button>
+            {% endif %}
+          </div>
+
+        </div>
+
+      </figcaption>
+
+    {% if settings.hero_link_url != blank %}</a>{% endif %}
 
 </figure>
 
 
-<!-- medium -->
+<!-- #1 medium -->
 
 <figure class="medium-cover">
 
@@ -31,13 +40,19 @@
     <figcaption>
 
       <div>
-        <h3>{{ settings.medium-cover-text-1 }}</h3>
-        <a href="http://supply-stuff.myshopify.com/collections/all">Shop</a>
+        <div class="inner-wrapper">
+          <h3>{{ settings.medium-cover-1-text }}</h3>
+          
+          {% if settings.medium-cover-1-button %}
+            <a href="{{ settings.medium-cover-1-button-link }}">{{ settings.medium-cover-1-button-text }}</a>
+          {% endif %}
       </div>
 
     </figcaption>
 
 </figure>
+
+<!-- #2 medium -->
 
 <figure class="medium-cover">
 
@@ -46,8 +61,13 @@
     <figcaption>
 
       <div>
-        <h3>{{ settings.medium-cover-text-2 }}</h3>
-        <a href="http://supply-stuff.myshopify.com/collections/all">Shop</a>
+        <div class="inner-wrapper">
+          <h3>{{ settings.medium-cover-2-text }}</h3>
+          
+          {% if settings.medium-cover-2-button %}
+            <a href="{{ settings.medium-cover-2-button-link }}">{{ settings.medium-cover-2-button-text }}</a>
+          {% endif %}
+        </div>
       </div>
 
     </figcaption>
@@ -55,7 +75,7 @@
 </figure>
 
 
-<!-- small -->
+<!-- #1 small -->
 
 <figure class="small-cover">
 
@@ -64,13 +84,20 @@
     <figcaption>
 
       <div>
-        <h1>Fall / Spring 15 just in</h1>
-        <a href="http://supply-stuff.myshopify.com/collections/all">Shop</a>
+        <div class="inner-wrapper">
+          <h3>{{ settings.small-cover-1-text }}</h3>
+          
+          {% if settings.small-cover-1-button %}
+            <a href="{{ settings.small-cover-1-button-link }}">{{ settings.small-cover-1-button-text }}</a>
+          {% endif %}
+        </div>
       </div>
 
     </figcaption>
 
 </figure>
+
+<!-- #2 small -->
 
 <figure class="small-cover">
 
@@ -79,13 +106,20 @@
     <figcaption>
 
       <div>
-        <h1>Fall / Spring 15 just in</h1>
-        <a href="http://supply-stuff.myshopify.com/collections/all">Shop</a>
+        <div class="inner-wrapper">
+          <h3>{{ settings.small-cover-2-text }}</h3>
+          
+          {% if settings.small-cover-2-button %}
+            <a href="{{ settings.small-cover-2-button-link }}">{{ settings.small-cover-2-button-text }}</a>
+          {% endif %}
+        </div>
       </div>
 
     </figcaption>
 
 </figure>
+
+<!-- #3 small -->
 
 <figure class="small-cover">
 
@@ -94,13 +128,20 @@
     <figcaption>
 
       <div>
-        <h1>Fall / Spring 15 just in</h1>
-        <a href="http://supply-stuff.myshopify.com/collections/all">Shop</a>
+        <div class="inner-wrapper">
+          <h3>{{ settings.small-cover-3-text }}</h3>
+          
+          {% if settings.small-cover-3-button %}
+            <a href="{{ settings.small-cover-3-button-link }}">{{ settings.small-cover-3-button-text }}</a>
+          {% endif %}
+        </div>
       </div>
 
     </figcaption>
 
 </figure>
+
+<!-- #4 small -->
 
 <figure class="small-cover">
 
@@ -109,8 +150,13 @@
     <figcaption>
 
       <div>
-        <h1>Fall / Spring 15 just in</h1>
-        <a href="http://supply-stuff.myshopify.com/collections/all">Shop</a>
+        <div class="inner-wrapper">
+          <h3>{{ settings.small-cover-4-text }}</h3>
+          
+          {% if settings.small-cover-4-button %}
+            <a href="{{ settings.small-cover-4-button-link }}">{{ settings.small-cover-4-button-text }}</a>
+          {% endif %}
+        </div>
       </div>
 
     </figcaption>
